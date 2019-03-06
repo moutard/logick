@@ -1,5 +1,5 @@
 {
-  "name": "Elastic-Beanstalk-Sample-App",
+  "name": "Logick",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -7,7 +7,15 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.43.0"
   },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "sequelize-cli": "^5.4.0"
+  },
   "scripts": {
-    "start": "node app.js"
+    "start": "yarn build && node dist/app.js",
+    "build": "babel src/ -d dist/",
+    "setup": "node_modules/.bin/sequelize db:migrate"
   }
 }
