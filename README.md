@@ -1,0 +1,2 @@
+# logick
+logick in js
